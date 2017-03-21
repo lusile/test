@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<br />
+<div class="row">
+
+
+    <div class="col-md-4">
+        <div class="list-group">
+            <div class="list-group-item active">
+                <h4 class="list-group-item-heading">
+                   <i class="glyphicon glyphicon-phone"></i> 手机参数
+                </h4>
+            </div>
+            <div class="list-group-item">
+
+                <span class="key">CPU型号:</span>
+                <span class="value">@ViewBag.CPU</span>
+            </div>
+            <div class="list-group-item">
+                <span class="key">SDK版本:</span>
+                <span class="value">@ViewBag.SDK</span>
+            </div>
+
+            <div class="list-group-item">
+                <span class="key">屏幕像素:</span>
+                <span class="value">@ViewBag.width * @ViewBag.height</span>
+            </div>
+            <div class="list-group-item">
+                <span class="key">设备型号:</span>
+                <span class="value">@ViewBag.Model</span>
+            </div>
+            <div class="list-group-item">
+                <span class="key">是否可用:</span>
+                <span class="value">
+                @if (ViewBag.Visable==true) {
+                    <i class="glyphicon glyphicon-ok text-primary"></i>
+                } else {
+                    <i class="glyphicon glyphicon-remove text-danger"></i>
+                }
+                </span>
+            </div>
+            <div class="list-group-item">
+                <span class="key"></span>
+            </div>
+            <div class="list-group-item">
+                @if (ViewBag.Review == true) {
+                    <a href="/review" class="btn btn-primary">
+                        共享过程录像回放
+                    </a>
+                }
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div class="col-md-4">
+
+        <div class="list-group">
+            <div class="list-group-item active">
+                <h4 class="list-group-item-heading">
+                    <i class="glyphicon glyphicon-cog"></i> 远程控制
+                </h4>
+            </div>
+            <div class="list-group-item" style="text-align:center">
+                <a href="/Control">
+                    <img class="lazy" src="~/images/computer_process.png" alt="控制">
+                </a>
+               
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="list-group">
+            <div class="list-group-item active">
+                <h4 class="list-group-item-heading">
+                    <i class="glyphicon glyphicon-eye-open"></i> 远程观看
+                </h4>
+            </div>
+            <div class="list-group-item" style="text-align:center">
+                <a href="/Watch">
+                    <img class="lazy" src="~/images/computer.png" alt="观看">
+                </a>
+               
+            </div>
+
+        </div>
+    </div>
+    
+    
+</div>
+
